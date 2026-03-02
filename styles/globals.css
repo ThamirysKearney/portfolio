@@ -604,4 +604,4 @@ main>section {
 .btn-primary:hover::after {
     left: 120%;
     /* El brillo cruza todo el botón */
-}
+}$animation
