@@ -132,6 +132,14 @@ header {
     z-index: 1000;
     display: flex;
     align-items: center;
+    background: rgba(3, 7, 18, 0.8);
+    /* Un fondo oscuro pero translúcido */
+    backdrop-filter: blur(15px);
+    /* Desenfoque más fuerte para leer mejor el menú */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Línea divisoria muy sutil */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Sombra suave inferior */
 }
 
 .nav-content {
@@ -265,6 +273,10 @@ nav a:hover {
     transition: var(--transition-slow);
     display: flex;
     flex-direction: column;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .project-card:hover {
@@ -328,6 +340,20 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
+}
+
+/* Aplicamos un resplandor (glow) de color cian cuando pasas el ratón */
+.skill-category {
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    /* La tarjeta sube un poquito */
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    /* Resplandor color cian (tu color primary) */
 }
 
 .skill-category h4 {
@@ -436,25 +462,39 @@ nav a:hover {
         margin: 10mm;
     }
 
-    body * {
-        visibility: hidden;
+    /* 1. Hide everything by default using display: none to avoid blank pages */
+    body>*:not(#cv-print-area) {
+        display: none !important;
     }
 
-    #cv-print-area,
-    #cv-print-area * {
-        visibility: visible;
+    header,
+    main,
+    footer,
+    aside,
+    .overlay,
+    #navbar,
+    #recruiter-panel,
+    #recruiter-mode-toggle {
+        display: none !important;
     }
 
+    /* 2. Show only the CV area and make it occupy the full page */
     #cv-print-area {
+        display: block !important;
+        visibility: visible !important;
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
-        display: block !important;
         color: #000 !important;
         background: #fff !important;
         font-family: 'Inter', sans-serif;
         line-height: 1.4;
+    }
+
+    #cv-print-area * {
+        visibility: visible !important;
+        color: #000 !important;
     }
 
     .cv-header {
@@ -514,4 +554,54 @@ nav a:hover {
     .no-print {
         display: none !important;
     }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main>section {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 1. Definimos el estilo base del botón con un brillo oculto */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    /* Esto asegura que el brillo no se salga del botón */
+    transition: all 0.3s ease;
+}
+
+/* 2. Creamos el "brillo" usando un elemento falso (::after) */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    /* Empezamos fuera del botón por la izquierda */
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            /* El color del brillo blanco */
+            transparent);
+    transform: rotate(25deg);
+    /* Inclinamos el brillo para que se vea más dinámico */
+    transition: 0.7s;
+    /* Duración de la animación del brillo */
+}
+
+/* 3. Cuando el usuario pasa el ratón (hover), movemos el brillo hacia la derecha */
+.btn-primary:hover::after {
+    left: 120%;
+    /* El brillo cruza todo el botón */
 }
