@@ -87,7 +87,7 @@ function renderSkills() {
               <span>${s.level}%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" style="width: ${s.level}%"></div>
+              <div class="skill-progress"></div>
             </div>
           </div>
         `).join('')}
