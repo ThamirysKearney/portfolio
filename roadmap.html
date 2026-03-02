@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roadmap mad AI P5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./img/Favicon-Factoria-F5-Web.png" type="image/x-icon">
+    <meta name="robots" content="noindex">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="sidebar-content d-flex flex-column h-100">
+                    <h1 id="nav-title" class="nav-title h3 mb-4 px-3">Bootcamp</h1>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link" href="#resumen"><i class="bi bi-eye me-2"></i>Resumen</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#roadmap"><i class="bi bi-map me-2"></i>Roadmap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#details"><i class="bi bi-check-circle"></i> Al detalle</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#calendar"><i class="bi bi-calendar me-2"></i>Calendario</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#horario"><i class="bi bi-clock"></i> Horario</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#evaluacion"><i class="bi bi-clipboard-check"></i> Evaluación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resources"><i class="bi bi-tools"></i> Recursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#equipo"><i class="bi bi-people"></i> Equipo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#link"><i class="bi bi-lightning-charge"></i> Quick Links</a></li>
+                    </ul>
+                    <figure class="logo-container text-center p-3 mt-auto">
+                        <a href="https://factoriaf5.org/" target="_blank">
+                            <img src="./img/logo-factoria-b.svg" alt="Logotipo FactoriaF5" class="img-fluid" style="max-width: 100px;">
+                        </a>
+                    </figure>
+
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="container section-container mt-4">
+                    <div class="row g-4">
+                        <h2 class="section-title">¡Hola Coder!👋</h2>
+                        <!-- General -->
+                        <div class="col-md-12" id="resumen">
+                            <div class="card">
+                                <div class="card-body">
+                                     <h5 class="card-title section-title">
+                                         <i class="bi bi-eye"></i> Resumen
+                                    </h5>
+                                     <div style="text-align: center;">
+                                    <img src="./img/data-analyst-banner.png" alt="Infografía IA" class="img-fluid" style="padding: 0 50px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" id="roadmap">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-map me-2"></i> Roadmap
+                                    </h5>
+                                    <br>
+                                    <p>🎯 El Bootcamp se basa en una pedagogía activa, centrada en el aprendizaje práctico mediante proyectos (learning by doing) y la enseñanza a través de la preparación e impartición de 'píldoras formativas' (learning by teaching). Además, los participantes realizarán diversos cursos que complementarán su formación y recibirán diversas masterclases de profesionales del sector. A lo largo de todo el proceso, el equipo formativo brindará un acompañamiento continuo.</p>
+                                    <br>
+                                    <div id="generate">
+                                        <label for="weeks">Semanas:</label>
+                                        <input type="number" id="weeks" min="1" max="52">
+                                        <button type="button" onclick="generateGantt()">Generar</button>
+                                    </div>
+                                    <!-- Leyenda-->
+                                    <div class="row mb-4">
+                                        <ul class="list-inline">
+                                        </ul>
+                                    </div>
+                                    <div class="gantt-container">
+                                        <table id="gantt-table"></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Al detalle -->
+                        <div class="col-md-12" id="details">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-tools"></i> Competencias al detalle
+                                    </h5>
+                                    <br/>
+                                     <div class="accordion" id="accordion">
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <!-- Calendar -->
+                        <div class="col-12" id="calendar">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-calendar me-2"></i> Calendario
+                                    </h5>
+                                    <br/>
+                                    <div class="ratio ratio-16x9">
+                                       <iframe src="https://calendar.google.com/calendar/embed?src=3eeffe6306f6dee2b5c97d0e55332f0cc534262b2e885c3ac2ec49499e402892%40group.calendar.google.com&ctz=Europe%2FMadrid" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Horario -->
+                         <div class="col-12" id="horario">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-clock"></i> Horario
+                                    </h5>
+                                    <br>
+                                    <div >
+                                        En el Google Calendar encontraran la información de los eventos y la información de dias online y presenciales, sin embargo este es el horario general que vamos a seguir:
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <ul>
+                                            <li>Empezamos: Presencial (08:30). Daily, rompehielos, kata, etc.</li>
+                                            <li>09:00 Píldoras, masterclases, etc.</li>
+                                            <li>11:00 Descanso de 15 minutos</li>
+                                            <li>11:15 Proyectos</li>
+                                            <li>14:00 Cursos y certificaciones</li>
+                                            <li>Fin: Presencial (15:00)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Evaluacion -->
+                         <div class="col-md-12" id="evaluacion">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-clipboard-check"></i> Evaluación
+                                    </h5>
+                                    <br/>
+                                    <div>
+                                        <p><strong>Evaluación del proyectos</strong>. Se brindará retroalimentación oral el mismo día de la presentación del proyecto, mientras que la autoevaluación (en proyectos individuales) y evaluación grupal (en proyectos grupales) se realizará al día siguiente y posteriormente, el equipo formativo compartirá las impresiones finales. Todo ellos deberá almacenarse en Google Classroom. Se trendrán en cuenta los siguietes aspectos:</p>
+                                        <ul>
+                                            <li>Análisis de los commits realizados por les coders, valorando tanto la cantidad como la calidad.</li>
+                                            <li>Participación individual en la presentación del proyecto.</li>
+                                            <li>Capacidad de responder preguntas específicas de manera clara y fundamentada.</li>
+                                            <li>Desarrollo y demostración de las competencias adquiridas durante el proyecto.</li>
+                                        </ul>
+                                        <p><strong>Evaluación de las píldoras</strong>.  Las píldoras se asignarán la primera semana, se apuntarán en el calendario y se valorarán los siguientes aspectos</p>
+                                        <ul>
+                                            <li>Que tenga un poco de inglés (hablado no solo en la presentación)</li>
+                                            <li>Que tenga parte teórica y parte práctica. Énfasis en la práctica</li>
+                                            <li>Tiempo mínimo 1 hora</li>
+                                            <li>Crear un repositorio en Github y/o publicar un artículo en Medium</li>
+                                        </ul>
+
+                                         <p><strong>Evaluación global al final del bootcamp.</strong></p>
+                                        <ul>
+                                            <li>Valoración de los proyectos entregados</li>
+                                            <li>Valoración de los cursos realizados</li>
+                                            <li>Valoración de las píldoras realizadas</li>
+                                            <li>Valoración de competencias transversales</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Resources  -->
+                        <div class="col-md-12" id="resources">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-tools"></i> Recursos de interés
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-grid gap-2">
+                                                <br>
+                                                <strong>Recursos técnicos</strong>
+                                                <div>
+                                                    Canales de Youtube
+                                                    <ul>
+                                                        <li>
+                                                        <a href=" https://www.youtube.com/@CodigoMaquina " target="_blank">CodigoMaquina</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.youtube.com/c/3blue1brown" target="_blank">3blue1brown</a>
+                                                        </li>
+                                                    </ul>
+                                                    Podcast
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://changelog.com/practicalai" target="_blank">Practical AI</a>
+                                                        </li>
+                                                    </ul>
+                                                    Libros
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://www.amazon.es/Hundred-Page-Machine-Learning-Book/dp/199957950X" target="_blank">The Hundred-Page Machine Learning Book-Andriy Burkov</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.amazon.es/Machine-Learning-Scikit-Learn-TensorFlow-English-ebook/dp/B0BHCFNY9Q/" target="_blank">Hands On Machine Learning with Scikit Learn Keras and Tensorflow</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.amazon.es/Ciencia-datos-desde-Segunda-edici%C3%B3n/dp/8441547203" target="_blank">Ciencia de datos desde cero (Segunda edición)</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.amazon.es/Practical-Statistics-Data-Scientists-Essential/dp/149207294X" target="_blank">Practical Statistics</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.wob.com/en-ie/books/anthony-croft/foundation-maths/9781292095172/GOR008341311?utm_source=google&amp;utm_medium=cpc&amp;utm_content=Shopping&amp;cq_src=google_ads&amp;cq_cmp=20794825635&amp;cq_con=&amp;cq_med=pla&amp;cq_plac=&amp;cq_net=x&amp;gad_source=1&amp;gclid=Cj0KCQjw2uiwBhCXARIsACMvIU11hmAdoWbmlasg7uhzWCacazaj4lTAG0t1Jv_3g9RRl2PJNarRbloaAilpEALw_wcB" target="_blank">Matemáticas</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://mml-book.github.io/book/mml-book_printed.pdf" target="_blank">
+                                                            Mathematics for Machine Learning</a>
+                                                        </li>
+                                                    </ul>                                        
+                                                    Ideas de Proyectos
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://noeliagorod.com/2022/02/09/180-proyectos-de-data-science-y-machine-learning-con-python-2/" target="_blank">180 proyectos de data science y machine learning con python</a>
+                                                        </li>
+                                                    </ul>
+                                                    Web para reforzar matemáticas
+                                                    <ul>
+                                                        <li>
+                                                            <a href="https://www.khanacademy.org" target="_blank">Khan Academy</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-grid gap-2">
+                                                <br>
+                                                <strong>Otros recursos</strong>
+                                                <ul>
+                                                    <li><a href="./img/agilidad.jpg" target="_blank">Imagen sobre agile</a></li>
+                                                    <li><a href="./img/aprendizaje.jpg" target="_blank">Imagen sobre aprendizaje</a></li>
+                                                    <li><a href="./img/errores.jpg" target="_blank">Imagen sobre errores</a></li>
+                                                    <li><a href="./img/evaluacion.jpg" target="_blank">Imagen sobre evaluación</a></li>
+                                                    <li><a href="https://www.youtube.com/watch?v=3hmzHfVArFQ" target="_blank">Vídeo sobre presentación de proyectos</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Equipo  -->
+                        <div class="col-md-12" id="equipo">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-people"></i> Equipo
+                                    </h5>
+                                    <ul>
+                                        <li><a href="https://www.linkedin.com/in/alexandra-zambrano-614309285/" target="_blank" rel="noopener noreferrer">Alexandra Zambrano  <i class="bi bi-linkedin"></i></a>- (alexandra.zambrano@factoriaf5.org) — <strong>Formadora</strong></li>
+                                        <li><a href="https://www.linkedin.com/in/jonnathan-ospina-montalvo-a0416a64/" target="_blank" rel="noopener noreferrer">Jonnathan Ospina  <i class="bi bi-linkedin"></i></a> — (jonnathan.ospina@factoriaf5.org) —<strong>Formador</strong></li>
+                                        <li><a href="https://www.linkedin.com/in/celia-mill%C3%A1n-15465184/" target="_blank" rel="noopener noreferrer">Celia Millán  <i class="bi bi-linkedin"></i></a> — (celia.millan@factoriaf5.org) — <strong>Formadora</strong></li>
+                                        <li><a href="https://www.linkedin.com/in/cristina-pozo-p%C3%A9rez-25193a163/" target="_blank" rel="noopener noreferrer">Cristina Pozo  <i class="bi bi-linkedin"></i></a> — (cristina.pozo@fundaciondonbosco.es) — <strong>Responsable Promoción Málaga </strong></li>
+                                        <li><a href="https://www.linkedin.com/in/mdolores-lopez-aviles/" target="_blank" rel="noopener noreferrer">Lola López  <i class="bi bi-linkedin"></i></a> — (lola.lopezaviles@fundaciondonbosco.es) — <strong>Responsable Promoción Sevilla</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links  -->
+                        <div class="col-md-12" id="link">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title section-title">
+                                        <i class="bi bi-lightning-charge"></i> Quick Links
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-primary" data-link="zoom">
+                                                    <a href="" target="_blank">
+                                                        <i class="bi bi-camera-video me-2"></i> Zoom
+                                                    </a>
+                                                </button>
+                                                <button class="btn btn-outline-primary" data-link="classroom">
+                                                    <a href="" target="_blank">
+                                                        <i class="bi bi-grid-3x3-gap me-2"></i> Google Classroom
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-outline-primary" data-link="discord">
+                                                    <a href="" target="_blank">
+                                                        <i class="bi bi-discord me-2"></i> Discord
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script  src="script.js"></script>
+</body>
+
+</html>

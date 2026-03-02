@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargando CV - Thamirys Kearney</title>
+    <!-- Estilo rápido para que se vea profesional mientras descarga -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left-color: #38bdf8;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <h1>Preparando tu descarga...</h1>
+    <p>El CV de Thamirys Kearney se descargará en unos segundos.</p>
+    <p>Si la descarga no comienza automáticamente, <a href="assets/cv.pdf" download="Thamirys_Kearney_CV.pdf">haz clic
+            aquí</a>.</p>
+
+    <script>
+        // Iniciar descarga automáticamente
+        window.onload = function () {
+            const link = document.createElement('a');
+            link.href = 'assets/cv.pdf';
+            link.download = 'Thamirys_Kearney_CV.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Opcional: Redirigir a la página principal después de 5 segundos
+            // setTimeout(() => { window.location.href = 'index.html'; }, 5000);
+        };
+    </script>
+</body>
+
+</html>

@@ -1,187 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thami Kearney | Data Analyst Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Thamirys Kearney | Data Analyst</title>
+  <meta name="description"
+    content="Thamirys Kearney - Professional Data Analyst Portfolio. Focused on business intelligence, SQL, Python and strategic insights." />
+  <link rel="stylesheet" href="styles/globals.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="top-nav">
-    <div class="brand">Thami Kearney</div>
-    <button class="menu-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-links">
-      <ul>
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
+
+  <header id="navbar" class="glass">
+    <div class="container nav-content">
+      <div class="logo">
+        <span class="logo-name">Thamirys <span class="primary-text">Kearney</span></span>
+        <span class="logo-role">Data Analyst</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><button id="recruiter-mode-toggle" class="btn-recruiter" title="Recruiter Mode">💼</button></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <select id="lang-select">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="pt">PT</option>
+        </select>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section id="hero" class="hero section reveal">
+    <section id="hero" class="container section-padding">
       <div class="hero-content">
-        <p class="eyebrow">Data Analyst Portfolio</p>
-        <h1>Thami Kearney</h1>
-        <h2>Data Analyst Junior</h2>
-        <p class="tagline">“Data Analyst en formación, transformando datos en insights que impulsan decisiones”</p>
-        <div class="hero-meta">
-          <span>Factoría F5 Bootcamp</span>
-          <span>Python · SQL · Visualización</span>
-          <span>Business Insights</span>
-        </div>
-        <div class="hero-actions">
-          <button class="primary" data-scroll="#projects">Ver Proyectos</button>
-          <button class="ghost" data-scroll="#about">Sobre mí</button>
-          <a class="outline" href="Thami_Kearney_CV.pdf" download>Download CV</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="glow-layer"></div>
-        <div class="sparkles" aria-hidden="true"></div>
-        <div class="pulse"></div>
-        <div class="grid"></div>
-      </div>
-    </section>
-
-    <section id="projects" class="section reveal">
-      <div class="section-header">
-        <p class="eyebrow">Selected Work</p>
-        <h3>Projects</h3>
-        <p class="section-desc">Proyectos alineados con el bootcamp, enfocados en análisis de datos, SQL, visualización y negocio.</p>
-      </div>
-      <div class="cards-grid">
-        <article class="card">
-          <div class="card-header">
-            <h4>Exploratory Data Analysis with Python</h4>
-            <span class="tech-pill">Python • Pandas • NumPy</span>
-          </div>
-          <p>Data cleaning, profiling, and EDA to uncover trends, outliers, and opportunities for better decisions.</p>
-          <div class="card-actions">
-            <a href="https://github.com/placeholder/eda-python" target="_blank" rel="noopener" class="link-btn">GitHub</a>
-            <a href="https://placeholder-demo.com/eda" target="_blank" rel="noopener" class="link-btn secondary">Demo</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <h4>SQL Data Analysis</h4>
-            <span class="tech-pill">SQL • Joins • Aggregations</span>
-          </div>
-          <p>Complex queries, joins, and metrics to answer stakeholder questions and validate business assumptions.</p>
-          <div class="card-actions">
-            <a href="https://github.com/placeholder/sql-analysis" target="_blank" rel="noopener" class="link-btn">GitHub</a>
-            <a href="https://placeholder-demo.com/sql" target="_blank" rel="noopener" class="link-btn secondary">Notebook</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <h4>Data Visualization</h4>
-            <span class="tech-pill">Python Viz • Storytelling</span>
-          </div>
-          <p>Visual narratives using clean dashboards and charts to highlight insights and communicate clearly.</p>
-          <div class="card-actions">
-            <a href="https://github.com/placeholder/data-viz" target="_blank" rel="noopener" class="link-btn">GitHub</a>
-            <a href="https://placeholder-demo.com/viz" target="_blank" rel="noopener" class="link-btn secondary">Demo</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <h4>Business Insights Project</h4>
-            <span class="tech-pill">KPIs • Processes • Insights</span>
-          </div>
-          <p>Defined KPIs, built data models, and delivered recommendations rooted in process optimization.</p>
-          <div class="card-actions">
-            <a href="https://github.com/placeholder/business-insights" target="_blank" rel="noopener" class="link-btn">GitHub</a>
-            <a href="https://placeholder-demo.com/insights" target="_blank" rel="noopener" class="link-btn secondary">Demo</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" class="section reveal">
-      <div class="section-header">
-        <p class="eyebrow">Who I Am</p>
-        <h3>About Me</h3>
-      </div>
-      <div class="about-content">
-        <p>
-          Soy Thami Kearney, Data Analyst Junior con formación en Factoría F5 y experiencia en gestión y operaciones. Trabajo con Python y SQL para limpiar, explorar y modelar datos, obteniendo insights accionables que mejoran procesos y respaldan decisiones estratégicas. Me motiva crear visualizaciones claras, historias con datos y entregables que respondan a las preguntas de negocio.
+        <h2 class="hero-eyebrow" data-i18n="hero.eyebrow">Data Analyst | SQL | Python | BI</h2>
+        <h1 class="text-gradient" data-i18n="hero.title">Turning Data into Strategy.</h1>
+        <p class="hero-desc" data-i18n="hero.description">
+          Business-minded Data Analyst with a strong management background.
+          I bridge the gap between complex raw data and strategic business decisions.
         </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">View Projects</a>
+          <a href="assets/cv.pdf" download="Thamirys_Kearney_CV.pdf" class="btn btn-outline"
+            data-i18n="hero.cta.download">Download CV</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="hero.cta.contact">Contact Me</a>
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="section reveal">
+    <section id="projects" class="container section-padding">
       <div class="section-header">
-        <p class="eyebrow">Strengths</p>
-        <h3>Skills</h3>
+        <h2 data-i18n="projects.title">Featured Projects</h2>
+        <p data-i18n="projects.subtitle">Data-driven solutions for complex business problems.</p>
       </div>
-      <div class="skills-grid">
-        <div class="skill-block">
-          <h4>Technical Skills</h4>
-          <ul class="badges">
-            <li>Python (Pandas, NumPy)</li>
-            <li>SQL &amp; MySQL</li>
-            <li>Data Cleaning &amp; EDA</li>
-            <li>Data Visualization</li>
-            <li>Excel (Advanced, Pivot Tables)</li>
-            <li>Git &amp; GitHub</li>
-            <li>Basic Machine Learning</li>
-            <li>CRM Data Analysis</li>
-            <li>Business &amp; KPI Analysis</li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4>Tools</h4>
-          <ul class="badges">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Excel</li>
-            <li>GitHub</li>
-            <li>CRM (HubSpot)</li>
-            <li>ERP Systems</li>
-            <li>Office 365</li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4>Soft Skills</h4>
-          <ul class="badges">
-            <li>Analytical Thinking</li>
-            <li>Attention to Detail</li>
-            <li>Problem Solving</li>
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Agile Mindset</li>
-            <li>Proactivity &amp; Positivity</li>
-          </ul>
+      <div class="projects-grid" id="projects-container">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <section id="skills" class="container section-padding">
+      <div class="section-header">
+        <h2 data-i18n="skills.title">Technical Expertise</h2>
+        <p data-i18n="skills.subtitle">Specialized toolkit for data analysis and strategy.</p>
+      </div>
+      <div class="skills-container" id="skills-container">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <section id="about" class="container section-padding glass" style="border-radius: var(--radius-lg); padding: 60px;">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 data-i18n="about.title">The Bridge and the Data</h2>
+          <div id="about-content-placeholder" data-i18n="about.description">
+            <!-- Content here -->
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="contact" class="footer section reveal">
-    <div class="footer-content">
-      <div>
-        <p>© <span id="year"></span> Thami Kearney</p>
-        <p><a href="mailto:thami.kearney@example.com">thami.kearney@example.com</a></p>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/placeholder" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/placeholder" target="_blank" rel="noopener">GitHub</a>
-        <a class="cv-btn" href="Thami_Kearney_CV.pdf" download>Download CV (PDF)</a>
-        <a class="back-top" href="#hero">Volver arriba</a>
-      </div>
+  <footer class="glass">
+    <div class="container">
+      <p>&copy; 2026 Thamirys Kearney. Made for strategic impact.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <aside id="recruiter-panel" class="glass">
+    <div class="recruiter-header">
+      <h2 data-i18n="recruiter.title">Recruiter Quick-View</h2>
+      <p data-i18n="recruiter.subtitle">Decision-ready summary.</p>
+    </div>
+    <div class="recruiter-actions">
+      <div class="recruiter-cv-preview">
+        <h4 data-i18n="recruiter.cv.title">Resume / CV</h4>
+        <p data-i18n="recruiter.cv.info">Optimized for ATS & strategic impact.</p>
+        <button class="btn btn-primary" onclick="window.print()" style="margin-top: 15px; width: 100%;">Print to
+          PDF</button>
+        <a href="assets/cv.pdf" download="Thamirys_Kearney_CV.pdf" class="btn btn-outline"
+          style="margin-top: 10px; width: 100%; justify-content: center;" data-i18n="recruiter.cv.download">Download
+          PDF</a>
+      </div>
+      <a href="mailto:thamirys.kearney@gmail.com" class="btn btn-outline" style="justify-content: center;">Send
+        Email</a>
+      <a href="https://linkedin.com/in/thamiryskearney" target="_blank" class="btn btn-outline"
+        style="justify-content: center;">LinkedIn Profile</a>
+    </div>
+  </aside>
 
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Hidden Print Area -->
+  <div id="cv-print-area" style="padding: 10mm; display: none;">
+    <div class="cv-header">
+      <h1>Thamirys Kearney</h1>
+      <h2>Data Analyst Junior | SQL • Python • Business Intelligence</h2>
+      <p>Worldwide | Email: thamirys.kearney@gmail.com</p>
+      <p>LinkedIn: linkedin.com/in/thamirys-kearney-0a7a7331/ | GitHub: github.com/ThamirysKearney</p>
+    </div>
+
+    <div class="cv-section">
+      <h3>Perfil Profesional</h3>
+      <p style="font-size: 10pt;">Profesional con visión de negocio en transición hacia Data Analytics, con más de 5
+        años
+        de experiencia en gestión operativa y optimización de procesos. Especializada en transformar datos complejos en
+        decisiones estratégicas. Experiencia demostrada en la automatización de flujos de trabajo, creación de
+        dashboards de BI y análisis de KPIs.</p>
+    </div>
+
+    <div class="cv-section">
+      <h3>Habilidades Técnicas</h3>
+      <div class="cv-skills-grid">
+        <div><strong>Análisis:</strong> SQL (MySQL), Python (Pandas, NumPy)</div>
+        <div><strong>BI:</strong> Power BI, Tableau, Excel Avanzado</div>
+        <div><strong>Herramientas:</strong> Azure, Google Analytics, CRM, Git</div>
+        <div><strong>Soft Skills:</strong> Trabajo en equipo, Soft Leadership</div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Experiencia Profesional</h3>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span>Analista de Operaciones y Datos | Altra Corporation Sl</span>
+          <span>2019 – 2023</span>
+        </div>
+        <ul>
+          <li>Optimización de Procesos: Rediséñe el proceso logístico mediante automatización, reduciendo el tiempo de
+            espera en 1 día y la huella de carbono en un 50% (Aprobado por junta directiva).</li>
+          <li>Business Intelligence: Creé reporte de KPIs y dashboards en Power BI para el análisis de comportamiento de
+            clientes y pedidos internacionales.</li>
+          <li>IA & Innovación: Colaboré en el desarrollo del primer proyecto de IA de la empresa, diseñando diagramas de
+            flujo para chatbots automáticos.</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span>Gestión de Operaciones e Itinerarios | Sport77 Racing Ltd (UK)</span>
+          <span>2023 – 2025</span>
+        </div>
+        <ul>
+          <li>Reporting Operativo: Preparé informes internos para la dirección ejecutiva sobre el estado de operaciones
+            internacionales.</li>
+          <li>Optimización de Logística: Introduje mejoras en canales de comunicación interna y herramientas de
+            planificación, optimizando la gestión en periodos críticos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Formación y Certificaciones</h3>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span>Bootcamp Data Analyst Junior | Factoría F5 / Fundación la Caixa</span>
+          <span>2026</span>
+        </div>
+        <div class="cv-item-header">
+          <span>Grado en Business Management (BSc 2:1) | Swansea University (UK)</span>
+          <span>2017</span>
+        </div>
+        <div style="font-size: 8pt; margin-top: 5px;">Certificaciones: Power BI para Controlling, AI Software
+          Specialist, Data Governance Foundations, SQL for Data Analytics.</div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Idiomas</h3>
+      <p style="font-size: 9pt;"><strong>Español / Portugués:</strong> Nativo | <strong>Inglés:</strong> Nivel Fluente
+        (Carrera universitaria en inglés) | <strong>Otros:</strong> Francés, Alemán, Italiano.</p>
+    </div>
+  </div>
+
+  <script src="scripts/i18n.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
