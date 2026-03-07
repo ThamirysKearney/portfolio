@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thamirys Kearney | Data Analyst</title>
+  <title>Thamirys Kearney | Data Analyst Junior</title>
   <meta name="description"
     content="Thamirys Kearney - Professional Data Analyst Portfolio. Focused on business intelligence, SQL, Python and strategic insights." />
   <link rel="stylesheet" href="styles/globals.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <div class="container nav-content">
       <div class="logo">
         <span class="logo-name">Thamirys <span class="primary-text">Kearney</span></span>
-        <span class="logo-role">Data Analyst</span>
+        <span class="logo-role">Data Analyst Junior</span>
       </div>
       <nav>
         <ul>
@@ -70,16 +70,26 @@
     </section>
 
     <section id="skills" class="container section-padding">
-      <div class="section-header">
-        <h2 data-i18n="skills.title">Technical Expertise</h2>
-        <p data-i18n="skills.subtitle">Specialized toolkit for data analysis and strategy.</p>
+      <div class="section-header skills-header">
+        <h2 data-i18n="skills.title" class="skills-main-title">SKILLS</h2>
       </div>
-      <div class="skills-container" id="skills-container">
-        <!-- Rendered by JS -->
+
+      <div class="skills-subsection">
+        <h3 class="subsection-title" data-i18n="skills.subtitle">TECHNICAL SKILLS</h3>
+        <div class="skills-container" id="technical-skills-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <div class="skills-subsection skills-subsection--soft">
+        <h3 class="subsection-title" data-i18n="skills.soft_title">Soft Skills</h3>
+        <div class="skills-container" id="soft-skills-container">
+          <!-- Rendered by JS -->
+        </div>
       </div>
     </section>
 
-    <section id="about" class="container section-padding glass" style="border-radius: var(--radius-lg); padding: 60px;">
+    <section id="about" class="container section-padding glass about-section">
       <div class="about-grid">
         <div class="about-text">
           <h2 data-i18n="about.title">The Bridge and the Data</h2>
@@ -127,14 +137,15 @@
       <h1>Thamirys Kearney</h1>
       <h2>Data Analyst Junior | SQL • Python • Business Intelligence</h2>
       <p>Worldwide | Email: thamirys.kearney@gmail.com</p>
-      <p>LinkedIn: linkedin.com/in/thamirys-kearney-0a7a7331/ | GitHub: github.com/ThamirysKearney</p>
+      <p>LinkedIn: Thamirys Kearney | GitHub: ThamirysKearney</p>
     </div>
 
     <div class="cv-section">
       <h3>Perfil Profesional</h3>
-      <p style="font-size: 10pt;">Profesional con visión de negocio en transición hacia Data Analytics, con más de 5
-        años
-        de experiencia en gestión operativa y optimización de procesos. Especializada en transformar datos complejos en
+      <p style="font-size: 10pt;">Profesional con visión de negocio en transición hacia el mundo de los Datos, con más
+        de 5
+        años de experiencia en gestión operativa y optimización de procesos. Especializándome en transformar datos
+        complejos en
         decisiones estratégicas. Experiencia demostrada en la automatización de flujos de trabajo, creación de
         dashboards de BI y análisis de KPIs.</p>
     </div>
@@ -144,8 +155,9 @@
       <div class="cv-skills-grid">
         <div><strong>Análisis:</strong> SQL (MySQL), Python (Pandas, NumPy)</div>
         <div><strong>BI:</strong> Power BI, Tableau, Excel Avanzado</div>
-        <div><strong>Herramientas:</strong> Azure, Google Analytics, CRM, Git</div>
-        <div><strong>Soft Skills:</strong> Trabajo en equipo, Soft Leadership</div>
+        <div><strong>Herramientas:</strong> ERP, Google Analytics, CRM, Git</div>
+        <div><strong>Soft Skills:</strong> Trabajo en equipo, Soft Leadership, Curiosidad intelectual, adaptabilidad
+        </div>
       </div>
     </div>
 
@@ -157,7 +169,7 @@
           <span>2019 – 2023</span>
         </div>
         <ul>
-          <li>Optimización de Procesos: Rediséñe el proceso logístico mediante automatización, reduciendo el tiempo de
+          <li>Optimización de Procesos: Rediseñé el proceso logístico mediante automatización, reduciendo el tiempo de
             espera en 1 día y la huella de carbono en un 50% (Aprobado por junta directiva).</li>
           <li>Business Intelligence: Creé reporte de KPIs y dashboards en Power BI para el análisis de comportamiento de
             clientes y pedidos internacionales.</li>
@@ -198,10 +210,12 @@
 
     <div class="cv-section">
       <h3>Idiomas</h3>
-      <p style="font-size: 9pt;"><strong>Español / Portugués:</strong> Nativo | <strong>Inglés:</strong> Nivel Fluente
-        (Carrera universitaria en inglés) | <strong>Otros:</strong> Francés, Alemán, Italiano.</p>
+      <p style="font-size: 9pt;"><strong>Español / Portugués:</strong> Nativo | <strong>Inglés:</strong> Nivel
+        Profesional
+        | <strong>Otros:</strong> Francés, Alemán, Italiano.</p>
     </div>
   </div>
+
 
   <script src="scripts/i18n.js"></script>
   <script src="scripts/main.js"></script>

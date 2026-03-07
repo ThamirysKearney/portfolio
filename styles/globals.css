@@ -179,6 +179,11 @@ nav ul {
 nav a {
     font-weight: 500;
     color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
 nav a:hover {
@@ -186,12 +191,21 @@ nav a:hover {
 }
 
 .lang-switch select {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-    padding: 4px;
-    border-radius: 4px;
+    background: var(--primary);
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
     cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-switch select:hover {
+    background-color: #22d3ee;
+    box-shadow: 0 0 15px var(--primary-glow);
 }
 
 /* Hero Section */
@@ -236,6 +250,10 @@ nav a:hover {
     font-size: 1.2rem;
     cursor: pointer;
     transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    padding: 4px 8px;
+    border-radius: var(--radius-md);
 }
 
 .btn-recruiter:hover {
@@ -336,16 +354,43 @@ nav a:hover {
 }
 
 /* Skills Grid */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
+.skills-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-/* Aplicamos un resplandor (glow) de color cian cuando pasas el ratón */
+.skills-main-title {
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    align-items: stretch;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+}
+
+.skills-subsection--soft {
+    margin-top: 80px;
+}
+
 .skill-category {
-    padding: 20px;
+    padding: 30px;
     border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -357,45 +402,92 @@ nav a:hover {
 }
 
 .skill-category h4 {
-    font-size: 1.25rem;
-    margin-bottom: 24px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    /* Reduced to pull items up */
     color: var(--primary);
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    min-height: 4rem;
+    /* Standardized to align items horizontally */
+    gap: 12px;
+    text-align: center;
 }
 
-.skill-list {
+.carousel-outer {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    /* Take up remaining space */
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    /* Closer mask to center for one-by-one feel */
+    mask-image: linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 48px;
+    width: max-content;
+}
+
+.carousel-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition-fast);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary-glow);
 }
 
 .skill-item {
-    width: 100%;
+    flex-shrink: 0;
+    width: 250px;
+    background: transparent;
+    padding: 20px;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+    background: transparent;
 }
 
 .skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: center;
 }
 
-.skill-bar {
-    height: 6px;
-    background: var(--surface-hover);
-    border-radius: 3px;
-    overflow: hidden;
-}
 
-.skill-progress {
-    height: 100%;
-    background: var(--primary);
-    border-radius: 3px;
-    transition: width 1s ease-out;
-    box-shadow: 0 0 10px var(--primary-glow);
-}
 
 /* Recruiter Panel */
 #recruiter-panel {
@@ -453,6 +545,12 @@ nav a:hover {
 .overlay.visible {
     opacity: 1;
     visibility: visible;
+}
+
+/* About Section */
+.about-section {
+    border-radius: var(--radius-lg);
+    padding: 60px;
 }
 
 /* Print Styles for CV (A4 Optimized) */
@@ -573,20 +671,26 @@ main>section {
 }
 
 /* 1. Definimos el estilo base del botón con un brillo oculto */
-.btn-primary {
+.btn-primary,
+.lang-switch select,
+nav a,
+.btn-recruiter {
     position: relative;
     overflow: hidden;
-    /* Esto asegura que el brillo no se salga del botón */
+    /* Esto asegura que el brillo no se salga del elemento */
     transition: all 0.3s ease;
 }
 
 /* 2. Creamos el "brillo" usando un elemento falso (::after) */
-.btn-primary::after {
+.btn-primary::after,
+.lang-switch select::after,
+nav a::after,
+.btn-recruiter::after {
     content: '';
     position: absolute;
     top: -50%;
     left: -100%;
-    /* Empezamos fuera del botón por la izquierda */
+    /* Empezamos fuera por la izquierda */
     width: 50%;
     height: 200%;
     background: linear-gradient(to right,
@@ -595,13 +699,29 @@ main>section {
             /* El color del brillo blanco */
             transparent);
     transform: rotate(25deg);
-    /* Inclinamos el brillo para que se vea más dinámico */
+    /* Inclinamos el brillo */
     transition: 0.7s;
-    /* Duración de la animación del brillo */
+    /* Duración de la animación */
+    pointer-events: none;
+    /* Make sure it doesn't block interactions */
 }
 
 /* 3. Cuando el usuario pasa el ratón (hover), movemos el brillo hacia la derecha */
-.btn-primary:hover::after {
+.btn-primary:hover::after,
+.lang-switch select:hover::after,
+nav a:hover::after,
+.btn-recruiter:hover::after {
     left: 120%;
-    /* El brillo cruza todo el botón */
-}$animation
+    /* El brillo cruza todo el elemento */
+}
+
+/* 4. Ajustes específicos para el Nav (más lento y sutil) */
+nav a::after {
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            /* Más tenue (de 0.3 a 0.15) */
+            transparent);
+    transition: 1.2s;
+    /* Más lento (de 0.7s a 1.2s) */
+}

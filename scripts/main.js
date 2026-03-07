@@ -45,9 +45,26 @@ const SKILLS_DATA = [
   {
     category: "Tools & BI",
     items: [
-      { name: "Power BI / Tableau", level: 75 },
+      { name: "Power BI", level: 75 },
+      { name: "Tableau", level: 75 },
       { name: "Advanced Excel", level: 95 },
       { name: "Google Analytics", level: 70 }
+    ]
+  },
+  {
+    category: "Soft Skills",
+    items: [
+      { name: "Team Work", level: 95 },
+      { name: "Curiosity & Lifelong Learner", level: 90 },
+      { name: "Soft Leadership", level: 85 },
+      { name: "Agile Tools", level: 80 },
+      { name: "Critical & Analytical Thinking", level: 90 },
+      { name: "Multilingualism", level: 95 },
+      { name: "Reliability", level: 95 },
+      { name: "Teamwork Ethic", level: 95 },
+      { name: "Respect of Confidentiality", level: 100 },
+      { name: "Excellent Attention to Detail", level: 95 },
+      { name: "Motivation & Self-Awareness", level: 90 }
     ]
   }
 ];
@@ -65,7 +82,7 @@ function renderProjects() {
         <h3>${p.title[lang]}</h3>
         <p>${p.description[lang]}</p>
         <div class="project-links">
-          <a href="${p.github}" class="project-link">GitHub <span>→</span></a>
+          <a href="${p.github}" class="project-link">GitHub</a>
           <span class="tag" style="border-color: var(--primary); color: #fff;">${p.impact}</span>
         </div>
       </div>
@@ -74,26 +91,82 @@ function renderProjects() {
 }
 
 function renderSkills() {
-  const container = document.getElementById('skills-container');
+  const techContainer = document.getElementById('technical-skills-container');
+  const softContainer = document.getElementById('soft-skills-container');
 
-  container.innerHTML = SKILLS_DATA.map(cat => `
-    <div class="skill-category">
-      <h4>${cat.category}</h4>
-      <div class="skill-list">
-        ${cat.items.map(s => `
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>${s.name}</span>
-              <span>${s.level}%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress"></div>
+  const renderCard = (cat, index) => {
+    const skillItems = cat.items.map(s => `
+      <div class="skill-item">
+        <div class="skill-info">
+          <span>${s.name}</span>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <div class="skill-category" data-cat-index="${index}">
+        ${cat.category === 'Soft Skills' ? '' : `<h4>${cat.category}</h4>`}
+        <div class="carousel-outer">
+          <button class="carousel-btn prev" onclick="moveCarousel(${index}, -1)">❮</button>
+          <div class="carousel-container" id="carousel-${index}">
+            <div class="carousel-track">
+              ${skillItems}
+              ${skillItems}
+              ${skillItems}
             </div>
           </div>
-        `).join('')}
+          <button class="carousel-btn next" onclick="moveCarousel(${index}, 1)">❯</button>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  };
+
+  if (techContainer) {
+    techContainer.innerHTML = SKILLS_DATA.slice(0, 2).map((cat, i) => renderCard(cat, i)).join('');
+  }
+  if (softContainer) {
+    softContainer.innerHTML = SKILLS_DATA.slice(2).map((cat, i) => renderCard(cat, i + 2)).join('');
+  }
+
+  // Initialize positions
+  SKILLS_DATA.forEach((_, index) => {
+    const container = document.getElementById(`carousel-${index}`);
+    const track = container.querySelector('.carousel-track');
+    const items = track.querySelectorAll('.skill-item');
+    const itemCount = items.length / 3;
+    const itemWidth = items[0].offsetWidth + 48; // width + gap
+
+    // Center the first item of the middle set
+    const centerOffset = (container.offsetWidth / 2) - (items[0].offsetWidth / 2);
+    container.scrollLeft = (itemWidth * itemCount) - centerOffset;
+  });
+}
+
+function moveCarousel(index, direction) {
+  const container = document.getElementById(`carousel-${index}`);
+  const track = container.querySelector('.carousel-track');
+  const items = track.querySelectorAll('.skill-item');
+  const itemCount = items.length / 3;
+  const itemWidth = items[0].offsetWidth + 48;
+
+  const targetScroll = container.scrollLeft + (direction * itemWidth);
+
+  container.scrollTo({
+    left: targetScroll,
+    behavior: 'smooth'
+  });
+
+  // Infinite scroll check after animation
+  setTimeout(() => {
+    const centerOffset = (container.offsetWidth / 2) - (items[0].offsetWidth / 2);
+    const middleStart = (itemWidth * itemCount) - centerOffset;
+
+    if (container.scrollLeft >= middleStart + (itemWidth * itemCount)) {
+      container.scrollLeft = middleStart;
+    } else if (container.scrollLeft <= middleStart - (itemWidth * itemCount)) {
+      container.scrollLeft = middleStart;
+    }
+  }, 400);
 }
 
 // Recruiter Mode Toggle Logic
@@ -131,7 +204,7 @@ async function fetchGitHubStats() {
       ghBtn.href = 'https://github.com/ThamirysKearney';
       ghBtn.target = '_blank';
       ghBtn.style.marginLeft = '10px';
-      ghBtn.innerHTML = `📊 GitHub Repos: ${data.public_repos}`;
+      ghBtn.innerHTML = `GitHub Repos: ${data.public_repos}`;
 
       statsContainer.appendChild(ghBtn);
     }

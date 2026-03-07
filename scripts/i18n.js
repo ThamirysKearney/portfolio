@@ -5,6 +5,13 @@ class I18nEngine {
     }
 
     async init() {
+        if (window.PORTFOLIO_TRANSLATIONS) {
+            this.translations = window.PORTFOLIO_TRANSLATIONS;
+            this.updateUI();
+            this.setupSelector();
+            return;
+        }
+
         try {
             const response = await fetch('data/translations.json');
             this.translations = await response.json();

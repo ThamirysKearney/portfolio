@@ -1,0 +1,11 @@
+# Archivos temporales de Office
+~$*
+~WRL*.tmp
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
